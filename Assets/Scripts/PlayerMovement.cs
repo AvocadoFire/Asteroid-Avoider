@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float forceMagnitude;
-    [SerializeField] float maxVelocity;
-    [SerializeField] float rotationSpeed;
+    [SerializeField] float forceMagnitude = 17;
+    [SerializeField] float maxVelocity = 6;
+    [SerializeField] float rotationSpeed = 5;
     private Rigidbody rb;
     private Camera mainCamera;
     private Vector3 movementDirection;

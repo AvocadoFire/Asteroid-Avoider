@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5833181159937010557}
   - component: {fileID: 8581442058384514999}
   - component: {fileID: 6978043624063837197}
-  - component: {fileID: 6978043624063837194}
   - component: {fileID: 5156186254647977143}
+  - component: {fileID: 6978043624063837194}
   - component: {fileID: 8407927347524660383}
   m_Layer: 0
   m_Name: Red Asteroid
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7788857245700505186}
   m_LocalRotation: {x: 0, y: 0, z: -0.63534397, w: 0.7722293}
   m_LocalPosition: {x: 3.0887, y: -0.20637, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,6 +101,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &5156186254647977143
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788857245700505186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1819428
+  m_Height: 3.4768965
+  m_Direction: 0
+  m_Center: {x: -0.06816536, y: 0.11898771, z: -0.029199421}
 --- !u!114 &6978043624063837194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,20 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
---- !u!136 &5156186254647977143
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7788857245700505186}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.1819428
-  m_Height: 3.4768965
-  m_Direction: 0
-  m_Center: {x: -0.06816536, y: 0.11898771, z: -0.029199421}
 --- !u!114 &8407927347524660383
 MonoBehaviour:
   m_ObjectHideFlags: 0

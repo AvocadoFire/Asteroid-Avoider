@@ -565,7 +565,8 @@ MonoBehaviour:
   - {fileID: 7788857245700505186, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
   - {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
   secBetweenAsteroids: 1.5
-  forceRange: {x: 3, y: 9}
+  topForce: {x: 2, y: 4}
+  sideForce: {x: 4, y: 7}
 --- !u!4 &219343510
 Transform:
   m_ObjectHideFlags: 0
@@ -1146,7 +1147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: -10}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 340.1352, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787755076

@@ -60,14 +60,23 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPosition = transform.position;
         Vector3 viewportPosition = mainCamera.WorldToViewportPoint(transform.position);
 
-        if (viewportPosition.x < 0 || viewportPosition.x > 1)
+        if (viewportPosition.x > 1)
         {
            newPosition.x = -newPosition.x + 0.1f; //so not stuck in loop.
-                  //supposed to be negative for 0. see if it keeps working.
+                  //supposed to be negative for 0. see if it keeps working. - didn't work!
         }
-        if (viewportPosition.y < 0 || viewportPosition.y > 1)
+        if (viewportPosition.y > 1)
         {
             newPosition.y = -newPosition.y + 0.1f;
+        }
+
+        if (viewportPosition.x < 0 )
+        {
+            newPosition.x = -newPosition.x - 0.1f; //so not stuck in loop.
+        }
+        if (viewportPosition.y < 0)
+        {
+            newPosition.y = -newPosition.y - 0.1f;
         }
 
         transform.position = newPosition;

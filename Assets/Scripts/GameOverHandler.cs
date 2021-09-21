@@ -20,7 +20,7 @@ public class GameOverHandler : MonoBehaviour
         asteroidSpawner.enabled = false;
         int score = scoreSystem.Score();
 
-        gameOverText.text = ("GaME oVeR!\n" + "sCoRe: " + score);
+        gameOverText.text = ("GaME oVeR!\nyour score:  " + score);
         gameOverDisplay.gameObject.SetActive(true);
     }
 

@@ -10,6 +10,7 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] TMP_Text gameOverText;
     [SerializeField] private ScoreSystem scoreSystem;
+    [SerializeField] private HighScore highScore;
     [SerializeField] private GameObject gameOverDisplay;
     [SerializeField] private AsteroidSpawner asteroidSpawner;
     [SerializeField] private PlayerHealth player;
@@ -21,9 +22,12 @@ public class GameOverHandler : MonoBehaviour
     public void EndGame()
     {
         //asteroidSpawner.enabled = false;
+        highScore.gameObject.SetActive(false);
+        scoreSystem.gameObject.SetActive(false);
         int score = scoreSystem.Score();
-
-        gameOverText.text = ("GaME oVeR!\nyour score:  " + score);
+        highScore.CalculateHighScore();
+        int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        gameOverText.text = ("GaME oVeR!\nyour score:  " + score + "\n high score: " + currentHighScore);
         gameOverDisplay.gameObject.SetActive(true);
     }
 
@@ -46,7 +50,8 @@ public class GameOverHandler : MonoBehaviour
         player.gameObject.SetActive(true);
         gameOverDisplay.gameObject.SetActive(false);
         scoreSystem.gameObject.SetActive(true);
-        asteroidSpawner.enabled = true;
+        highScore.gameObject.SetActive(true);
+      //  asteroidSpawner.enabled = true;
     }
 
     public void ReturnToMenu()

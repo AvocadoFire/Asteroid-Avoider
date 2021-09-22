@@ -22,7 +22,7 @@ public class ScoreSystem : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            return;
         }
     }
 
@@ -30,4 +30,5 @@ public class ScoreSystem : MonoBehaviour
     {
         return (int)score;
     }
+
 }

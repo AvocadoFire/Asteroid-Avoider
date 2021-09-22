@@ -20,7 +20,7 @@ public class GameOverHandler : MonoBehaviour
     }
     public void EndGame()
     {
-        asteroidSpawner.enabled = false;
+        //asteroidSpawner.enabled = false;
         int score = scoreSystem.Score();
 
         gameOverText.text = ("GaME oVeR!\nyour score:  " + score);
@@ -30,7 +30,6 @@ public class GameOverHandler : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(1);
-        gameObject.SetActive(false);
         gameObject.SetActive(true);
     }
 

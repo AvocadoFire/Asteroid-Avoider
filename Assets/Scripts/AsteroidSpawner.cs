@@ -10,7 +10,8 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField] private Vector2 speedFromTottom = new Vector2 (2f,4f);
     [SerializeField] private Vector2 speedFromSides = new Vector2(4f, 7f);
     [SerializeField] private float speedGainSec = .2f;
-    [SerializeField] private float asterSpawnGainSec = .002f;
+    [SerializeField] private float asteroidSpawnGainSec = .002f;
+    [SerializeField] PlayerHealth player;
 
     private float speedGain;
     private Camera mainCamera;
@@ -24,8 +25,12 @@ public class AsteroidSpawner : MonoBehaviour
     private void Update()
     {
         timer -= Time.deltaTime;
-        speedGain += speedGainSec * Time.deltaTime;
-        secBetweenAsteroids -= asterSpawnGainSec * Time.deltaTime;
+        if (player.isActiveAndEnabled == true)
+        {
+            speedGain += speedGainSec * Time.deltaTime;
+            secBetweenAsteroids -= asteroidSpawnGainSec * Time.deltaTime;
+        }
+
         if (timer <= 0)
         {
             SpawnAsteroid();

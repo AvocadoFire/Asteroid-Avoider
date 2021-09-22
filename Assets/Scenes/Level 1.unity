@@ -296,8 +296,11 @@ MonoBehaviour:
   - {fileID: 7788857245700505186, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
   - {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
   secBetweenAsteroids: 0.8
-  topForce: {x: 2, y: 4}
-  sideForce: {x: 4, y: 7}
+  speedFromTottom: {x: 2, y: 4}
+  speedFromSides: {x: 4, y: 7}
+  speedGainSec: 0.2
+  asteroidSpawnGainSec: 0.1
+  player: {fileID: 2093094214}
 --- !u!4 &219343510
 Transform:
   m_ObjectHideFlags: 0
@@ -1252,7 +1255,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'GaME oVeR!
 
-    yOUr ScOrE:
+    your score:
 
     5614'
   m_isRightToLeft: 0

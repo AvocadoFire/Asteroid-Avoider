@@ -648,7 +648,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 930049124}
         m_TargetAssemblyTypeName: GameOverHandler, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1061,10 +1061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31af46490d2db746893b23bd1aa0ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 580731112}
   gameOverText: {fileID: 1297251552}
   scoreSystem: {fileID: 1042096420}
   gameOverDisplay: {fileID: 1698091879}
   asteroidSpawner: {fileID: 219343509}
+  player: {fileID: 2093094214}
 --- !u!1001 &936984529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1736,7 +1738,7 @@ GameObject:
   - component: {fileID: 1698091882}
   - component: {fileID: 1698091881}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Game Over Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

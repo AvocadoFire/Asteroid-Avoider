@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,7 +24,6 @@ public class ScoreSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-
     }
 
     public int Score()

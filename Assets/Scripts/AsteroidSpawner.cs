@@ -7,10 +7,12 @@ public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] asteroidPrefabs;
     [SerializeField] private float secBetweenAsteroids = 1.5f;
-    [SerializeField] private Vector2 topForce = new Vector2 (2f,4f);
-    [SerializeField] private Vector2 sideForce = new Vector2(4f, 7f);
+    [SerializeField] private Vector2 speedFromTottom = new Vector2 (2f,4f);
+    [SerializeField] private Vector2 speedFromSides = new Vector2(4f, 7f);
+    [SerializeField] private float speedGainSec = .2f;
+    [SerializeField] private float asterSpawnGainSec = .002f;
 
-
+    private float speedGain;
     private Camera mainCamera;
     private float timer;
 
@@ -22,6 +24,8 @@ public class AsteroidSpawner : MonoBehaviour
     private void Update()
     {
         timer -= Time.deltaTime;
+        speedGain += speedGainSec * Time.deltaTime;
+        secBetweenAsteroids -= asterSpawnGainSec * Time.deltaTime;
         if (timer <= 0)
         {
             SpawnAsteroid();
@@ -44,28 +48,28 @@ public class AsteroidSpawner : MonoBehaviour
                 spawnPoint.x = 0;
                 spawnPoint.y = UnityEngine.Random.value;
                 direction = new Vector2(1f, UnityEngine.Random.Range(-1, 1));
-                force = sideForce;
+                force = speedFromSides;
                 break;
             case 1:
                 //right
                 spawnPoint.x = 1;
                 spawnPoint.y = UnityEngine.Random.value;
                 direction = new Vector2(-1f, UnityEngine.Random.Range(-1, 1));
-                force = sideForce;
+                force = speedFromSides;
                 break;
             case 2:
                 //bottom
                 spawnPoint.x = UnityEngine.Random.value;
                 spawnPoint.y = 0;
                 direction = new Vector2(UnityEngine.Random.Range(-1, 1), 1f);
-                force = topForce;
+                force = speedFromTottom;
                 break;
             case 3:
                 //top
                 spawnPoint.x = UnityEngine.Random.value;
                 spawnPoint.y = 1;
                 direction = new Vector2(UnityEngine.Random.Range(-1, 1), -1f);
-                force = topForce;
+                force = speedFromTottom;
                 break;
 
                 //in viewport space (0,1) and need to have it in world space.
@@ -79,7 +83,8 @@ public class AsteroidSpawner : MonoBehaviour
             worldSpawnPoint, 
             Quaternion.Euler(0f,0f,UnityEngine.Random.Range(0,360)));
         Rigidbody rb = asteroidInstance.GetComponent<Rigidbody>();
-        rb.velocity = direction.normalized * UnityEngine.Random.Range(force.x, force.y);
+
+        rb.velocity = direction.normalized * UnityEngine.Random.Range(force.x + speedGain, force.y + speedGain);
         //normalizing to make sure the magnitude is 1
 
     }

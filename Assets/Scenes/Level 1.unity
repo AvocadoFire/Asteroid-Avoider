@@ -295,7 +295,7 @@ MonoBehaviour:
   - {fileID: 8784137321598046534, guid: fe5cd4ceba9afc24e966660eede5f378, type: 3}
   - {fileID: 7788857245700505186, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
   - {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
-  secBetweenAsteroids: 1.5
+  secBetweenAsteroids: 0.8
   topForce: {x: 2, y: 4}
   sideForce: {x: 4, y: 7}
 --- !u!4 &219343510

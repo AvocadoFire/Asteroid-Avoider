@@ -39,6 +39,7 @@ public class GameOverHandler : MonoBehaviour
 
     public void ContinueButton()
     {
+        asteroidSpawner.enabled = false;
         AdManager.Instance.ShowAd(this);
         continueButton.interactable = false;
     }
@@ -51,7 +52,7 @@ public class GameOverHandler : MonoBehaviour
         gameOverDisplay.gameObject.SetActive(false);
         scoreSystem.gameObject.SetActive(true);
         highScore.gameObject.SetActive(true);
-      //  asteroidSpawner.enabled = true;
+        asteroidSpawner.enabled = true;
     }
 
     public void ReturnToMenu()

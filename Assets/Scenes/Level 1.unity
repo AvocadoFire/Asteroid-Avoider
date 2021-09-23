@@ -295,11 +295,11 @@ MonoBehaviour:
   - {fileID: 8784137321598046534, guid: fe5cd4ceba9afc24e966660eede5f378, type: 3}
   - {fileID: 7788857245700505186, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
   - {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
-  secBetweenAsteroids: 1
+  secBetweenAsteroids: 1.5
   speedFromTottom: {x: 2, y: 4}
   speedFromSides: {x: 4, y: 7}
   speedGainSec: 0.2
-  asteroidSpawnGainSec: 0.02
+  asteroidSpawnGainSec: 0.09
   player: {fileID: 2093094214}
 --- !u!4 &219343510
 Transform:

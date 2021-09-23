@@ -568,7 +568,8 @@ MonoBehaviour:
   speedFromTottom: {x: 2, y: 4}
   speedFromSides: {x: 4, y: 7}
   speedGainSec: 0.2
-  asterSpawnGainSec: 0.2
+  asteroidSpawnGainSec: 0.002
+  player: {fileID: 2093094214}
 --- !u!4 &219343510
 Transform:
   m_ObjectHideFlags: 0
@@ -6730,6 +6731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750aea887e6d8b54388330e9ef60c2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScoreText: {fileID: 0}
 --- !u!4 &1960546518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7447903514959078616, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}

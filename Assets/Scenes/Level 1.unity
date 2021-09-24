@@ -7796,7 +7796,7 @@ GameObject:
   - component: {fileID: 2093094217}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7894,7 +7894,7 @@ MonoBehaviour:
   projectile: {fileID: 3471576504731417748, guid: 627a7aad69573484fa1bc91fe63cd9de, type: 3}
   gun1: {fileID: 1724478888}
   gun2: {fileID: 735323127}
-  speed: 15
+  speed: 25
   projectileTimer: 0.1
 --- !u!1 &2106672454
 GameObject:

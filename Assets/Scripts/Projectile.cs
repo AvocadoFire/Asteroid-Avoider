@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    //public void MoveProjectile(Vector3 speedVector)
-    //{
-    //    transform.Translate(speedVector * Time.deltaTime, Space.Self);
-    //}
-
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider otherCollider) //other thing's collider
+    {
+        //var health = otherCollider.GetComponent<Health>();
+        //var attacker = otherCollider.GetComponent<Attacker>();
+
+        if (otherCollider.gameObject.CompareTag("Asteroid"))
+        {
+            Destroy(gameObject);
+            Destroy(otherCollider.gameObject);
+        }
+
+    }
+
+
+
+
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5195712983825577110}
   - component: {fileID: 8017085522059244587}
   - component: {fileID: 8879515280732748990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shiny 1
   m_TagString: Asteroid
   m_Icon: {fileID: 0}

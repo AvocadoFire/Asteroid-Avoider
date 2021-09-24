@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5944300893718809491}
   - component: {fileID: 8441697932900551470}
   - component: {fileID: 7016299666011653051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Purple Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}

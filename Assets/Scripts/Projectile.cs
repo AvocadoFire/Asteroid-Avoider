@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private ScoreSystem scoreSystem;
     [SerializeField] AudioClip asteroidSound;
+    [SerializeField] GameObject asteroidParticle;
+    private ScoreSystem scoreSystem;
     Camera mainCamera;
     const string MasterSFKey = "master sf volume";
     const string DefaultSFVolume = "default sf volume";
     float volume;
-
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class Projectile : MonoBehaviour
         if(otherCollider.gameObject.CompareTag("Asteroid")) 
         {
             Destroy(otherCollider.gameObject);
+            Instantiate(asteroidParticle, gameObject.transform.position, gameObject.transform.rotation);
             AudioSource.PlayClipAtPoint(asteroidSound, mainCamera.transform.position, volume);
             scoreSystem.AddToScore();
             Destroy(gameObject);

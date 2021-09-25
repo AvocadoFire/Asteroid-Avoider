@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class OptionsController : MonoBehaviour
 {
     [Range(0, 2)] [SerializeField] int defaultDifficulty = 1;
+    [Range(0, 1)] [SerializeField] float defaultSFVolume = 0.08f;
     [SerializeField] Slider volumeSlider;
     [SerializeField] Slider difficultySlider;
-    const string DifficultyKey = "difficulty";
+    [SerializeField] Slider SFSlider;
     const string DefaultDifficulty = "default difficulty";
     const string DefaultVolume = "default volume";
+    const string DefaultSFVolume = "default sf volume";
 
     private void Awake()
     {
         PlayerPrefs.SetInt(DefaultDifficulty, defaultDifficulty);
+        PlayerPrefs.SetFloat(DefaultSFVolume, defaultSFVolume);
     }
 
     private void Start()
@@ -23,6 +26,7 @@ public class OptionsController : MonoBehaviour
         difficultySlider.wholeNumbers = true;
         difficultySlider.value = PlayerPrefsController.GetMasterDifficulty();
         volumeSlider.value = PlayerPrefsController.GetMasterVolume();
+        SFSlider.value = PlayerPrefsController.GetSFVolume();
     }
 
     private void Update()
@@ -42,11 +46,13 @@ public class OptionsController : MonoBehaviour
     {
         PlayerPrefsController.SetMasterDifficulty((int)difficultySlider.value);
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);
+        PlayerPrefsController.SetSFVolume(SFSlider.value);
         SceneManager.LoadScene(0);
     }
 
     public void SetDefaults()
     {
+        SFSlider.value = PlayerPrefs.GetFloat(DefaultSFVolume);
         volumeSlider.value = PlayerPrefs.GetFloat(DefaultVolume);
         difficultySlider.value = PlayerPrefs.GetInt(DefaultDifficulty);
     }

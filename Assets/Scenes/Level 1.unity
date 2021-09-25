@@ -434,13 +434,13 @@ MonoBehaviour:
   - 0.07
   - 0.1
   asteroidSpawnGainSec:
-  - 0.001
   - 0.03
-  - 0.5
+  - 0.01
+  - 0.1
   maxAstSeconds:
   - 0.6
   - 0.4
-  - 0.3
+  - 0.2
   maxAstSpeedGain:
   - 7
   - 12
@@ -1345,6 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31af46490d2db746893b23bd1aa0ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 1914717227}
   continueButton: {fileID: 580731112}
   gameOverText: {fileID: 1297251552}
   scoreSystem: {fileID: 1042096420}
@@ -7745,6 +7746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e187715cba27ce42a016c3e837fbfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserSound: {fileID: 8300000, guid: 789a2541fd6c48b49a53ebc34d3402aa, type: 3}
   projectile: {fileID: 3471576504731417748, guid: 627a7aad69573484fa1bc91fe63cd9de, type: 3}
   gun1: {fileID: 1724478888}
   gun2: {fileID: 735323127}

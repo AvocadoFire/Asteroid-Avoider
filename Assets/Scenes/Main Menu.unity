@@ -566,8 +566,10 @@ MonoBehaviour:
   - {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
   speedFromTottom: {x: 2, y: 4}
   speedFromSides: {x: 4, y: 7}
-  speedGainSec: 0.2
-  asteroidSpawnGainSec: 0.002
+  speedGainSec: []
+  asteroidSpawnGainSec: []
+  maxAstSeconds: []
+  maxAstSpeedGain: []
   player: {fileID: 2093094214}
   secBetweenAsteroids: 1.5
   speedGain: 0
@@ -7024,6 +7026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbf63ca45585e34d86396bb242d4f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultVolume: 0.08
 --- !u!82 &2032087489
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7034,7 +7037,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87373752704701e4a9fd582cb155b187, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3d2c675bb9ef3d4e9ffa95d77723fa6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

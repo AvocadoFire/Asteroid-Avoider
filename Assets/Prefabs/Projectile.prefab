@@ -140,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff4eebc99bc63246b54772598b96f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidSound: {fileID: 8300000, guid: e51b55cb796fc9c498d78304be7c92a6, type: 3}

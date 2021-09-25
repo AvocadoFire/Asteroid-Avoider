@@ -9,7 +9,7 @@ public class HighScore : MonoBehaviour
     [SerializeField] private ScoreSystem scoreSystem;
     const string MasterDifficultyKey = "difficulty";
 
-    public static readonly string[] HighScoreName = { "Easy", "Normal", "Hard"};
+    public static readonly string[] HighScoreName = { "Casual", "Normal", "Hard"};
     int[] highScores = { 0,0,0 };
     int difficultyInt;
     string highScoreName;

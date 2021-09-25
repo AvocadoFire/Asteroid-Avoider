@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameOverHandler : MonoBehaviour
 {
+    [SerializeField] private Pause pause;
     [SerializeField] private Button continueButton;
     [SerializeField] TMP_Text gameOverText;
     [SerializeField] private ScoreSystem scoreSystem;
@@ -21,8 +22,10 @@ public class GameOverHandler : MonoBehaviour
     }
     public void EndGame()
     {
+        pause.gameObject.SetActive(false);
         highScore.gameObject.SetActive(false);
         scoreSystem.gameObject.SetActive(false);
+
         int score = scoreSystem.Score();
         var currentHighScore = highScore.CalculateHighScore();
   //      int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);

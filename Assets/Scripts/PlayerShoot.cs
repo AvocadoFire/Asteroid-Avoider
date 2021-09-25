@@ -22,12 +22,13 @@ public class PlayerShoot : MonoBehaviour
             GameObject newProjectile1 = Instantiate
                 (projectile, gun1.transform.position, transform.rotation);
             Rigidbody rbProjectile = newProjectile1.GetComponent<Rigidbody>();
-            rbProjectile.velocity = rbPlayer.velocity * speed;
+            rbProjectile.velocity = rbPlayer.velocity.normalized * speed;
 
             GameObject newProjectile2 = Instantiate
                 (projectile, gun2.transform.position, transform.rotation);
             Rigidbody rbProjectile2 = newProjectile2.GetComponent<Rigidbody>();
             rbProjectile2.velocity = rbPlayer.velocity.normalized * speed;
+
             timer += projectileTimer;
         }
     }

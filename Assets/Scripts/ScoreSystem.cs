@@ -7,23 +7,19 @@ using UnityEngine.UI;
 
 public class ScoreSystem : MonoBehaviour
 {
-    [SerializeField] PlayerHealth playerHealth;
     [SerializeField] TMP_Text scoreText = null;
     [SerializeField] float scoreMultiplier = 5;
     float score = 0;
 
     private void Update()
     {
-        if (playerHealth.isActiveAndEnabled == true)
-        {
-            score += Time.deltaTime * scoreMultiplier;
-            int scoreInt = (int)score;
-            scoreText.text = scoreInt.ToString();
-        }
-        else
-        {
-            return;
-        }
+        int scoreInt = (int)score;
+        scoreText.text = scoreInt.ToString();
+    }
+
+    public void AddToScore()
+    {
+        score += scoreMultiplier;
     }
 
     public int Score()

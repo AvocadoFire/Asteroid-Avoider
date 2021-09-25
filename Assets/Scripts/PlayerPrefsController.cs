@@ -6,48 +6,46 @@ public class PlayerPrefsController : MonoBehaviour
 {
     //defining a key we can use over and over
 
-    const string MASTER_VOLUME_KEY = "master volume";
-    const string DIFFICULTY_KEY = "difficulty";
 
-    const float MIN_VOLUME = 0f;
-    const float MAX_VOLUME = 1f;
-    const int MIN_DIFFICULTY = 0;
-    const int MAX_DIFFICULTY = 9;
+    const string MasterVolumeKey = "master volume";
+    const string MasterDifficultyKey = "difficulty";
+    const string DefaultDifficulty = "default difficulty";
+    const string DefaultVolume = "default volume";
 
+    const float MinVolume = 0f;
+    const float MaxVolume = 1f;
+    const int MinDifficulty = 0;
+    const int MaxDifficulty = 2;
+
+
+    public static float GetMasterVolume()
+    {
+        return PlayerPrefs.GetFloat(MasterVolumeKey, PlayerPrefs.GetFloat(DefaultVolume));
+    }
+    public static int GetMasterDifficulty()
+    {
+        return PlayerPrefs.GetInt(MasterDifficultyKey, PlayerPrefs.GetInt(DefaultDifficulty));
+    }
     public static void SetMasterVolume(float volume)
     {
-        if (volume >= MIN_VOLUME && volume <= MAX_VOLUME)
+        if (volume >= MinVolume && volume <= MaxVolume)
         {
-            PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
+            PlayerPrefs.SetFloat(MasterVolumeKey, volume);
         }
         else 
         {
             Debug.LogError("Master volume is out of range");
         }
-   
     }
-
-    public static float GetMasterVolume()
-    {
-        return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
-    }
-
-    public static int GetMasterDifficulty()
-    {
-        return PlayerPrefs.GetInt(DIFFICULTY_KEY);
-    }
-
     public static void SetMasterDifficulty(int difficulty)
     {
-        if (difficulty >= MIN_DIFFICULTY && difficulty <= MAX_DIFFICULTY)
+        if (difficulty >= MinDifficulty && difficulty <= MaxDifficulty)
         {
-            PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
+            PlayerPrefs.SetInt(MasterDifficultyKey, difficulty);
         }
         else
         {
             Debug.LogError("DIFFICULTY is out of range");
         }
-
     }
-
 }

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private ScoreSystem scoreSystem;
+
+
+    private void Start()
+    {
+        scoreSystem = FindObjectOfType<ScoreSystem>();
+    }
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
@@ -11,15 +18,12 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider otherCollider) //other thing's collider
     {
-        //var health = otherCollider.GetComponent<Health>();
-        //var attacker = otherCollider.GetComponent<Attacker>();
-
-        if (otherCollider.gameObject.CompareTag("Asteroid"))
+        if(otherCollider.gameObject.CompareTag("Asteroid")) 
         {
-            Destroy(gameObject);
             Destroy(otherCollider.gameObject);
+            scoreSystem.AddToScore();
+            Destroy(gameObject);
         }
-
     }
 
 

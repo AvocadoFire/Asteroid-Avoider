@@ -6,16 +6,23 @@ using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour
 {
+    [Range(0, 2)] [SerializeField] int defaultDifficulty = 1;
     [SerializeField] Slider volumeSlider;
-    //[SerializeField] Slider difficultySlider;
-    [Range(0, 1)] [SerializeField] float defaultVolume = 0.08f;
-    //[Range(0, 9)] [SerializeField] int defaultDifficulty = 5;
+    [SerializeField] Slider difficultySlider;
+    const string DifficultyKey = "difficulty";
+    const string DefaultDifficulty = "default difficulty";
+    const string DefaultVolume = "default volume";
+
+    private void Awake()
+    {
+        PlayerPrefs.SetInt(DefaultDifficulty, defaultDifficulty);
+    }
 
     private void Start()
     {
-        volumeSlider.value = PlayerPrefsController.GetMasterVolume(); //what is the master volume
-    //    difficultySlider.wholeNumbers = true;
-    //    difficultySlider.value = PlayerPrefsController.GetMasterDifficulty();
+        difficultySlider.wholeNumbers = true;
+        difficultySlider.value = PlayerPrefsController.GetMasterDifficulty();
+        volumeSlider.value = PlayerPrefsController.GetMasterVolume();
     }
 
     private void Update()
@@ -29,25 +36,19 @@ public class OptionsController : MonoBehaviour
         {
             Debug.LogWarning("No music player found.. remember to start from Splash screen");
         }
-        //set difficulty here
-        //var livesDisplay = FindObjectOfType<LivesDisplay>();
-        //if (livesDisplay)
-        //{
-        //    livesDisplay.SetLives((int)difficultySlider.value);
-        //}
     }
 
     public void SaveAndExit()
     {
-        //PlayerPrefsController.SetMasterDifficulty((int)difficultySlider.value);
+        PlayerPrefsController.SetMasterDifficulty((int)difficultySlider.value);
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);
         SceneManager.LoadScene(0);
     }
 
     public void SetDefaults()
     {
-        volumeSlider.value = defaultVolume;
-       // difficultySlider.value = (float)defaultDifficulty;
+        volumeSlider.value = PlayerPrefs.GetFloat(DefaultVolume);
+        difficultySlider.value = PlayerPrefs.GetInt(DefaultDifficulty);
     }
 
 }

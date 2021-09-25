@@ -6,20 +6,27 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] asteroidPrefabs;
-    [SerializeField] private float secBetweenAsteroids = 1.5f;
     [SerializeField] private Vector2 speedFromTottom = new Vector2 (2f,4f);
     [SerializeField] private Vector2 speedFromSides = new Vector2(4f, 7f);
-    [SerializeField] private float speedGainSec = .09f;
-    [SerializeField] private float asteroidSpawnGainSec = .001f;
+    [SerializeField] private float[] speedGainSec;
+    [SerializeField] private float[] asteroidSpawnGainSec;
+    [SerializeField] private float[] maxAstSeconds;
+    [SerializeField] private float[] maxAstSpeedGain;
     [SerializeField] PlayerHealth player;
 
-    private float speedGain;
+    [SerializeField] private float secBetweenAsteroids = 1.5f;
+
+    [SerializeField] private float speedGain;
     private Camera mainCamera;
     private float timer;
+    private int difficulty;
+
+    const string DifficultyKey = "difficulty";
 
     private void Start()
     {
         mainCamera = Camera.main;
+        difficulty = PlayerPrefs.GetInt(DifficultyKey);
     }
 
     private void Update()
@@ -27,8 +34,14 @@ public class AsteroidSpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if (player.isActiveAndEnabled == true)
         {
-            speedGain += speedGainSec * Time.deltaTime;
-            secBetweenAsteroids -= asteroidSpawnGainSec*Time.deltaTime;
+            if (speedGain < maxAstSpeedGain[difficulty])
+            {
+                speedGain += speedGainSec[difficulty] * Time.deltaTime;
+            }
+            if (secBetweenAsteroids > maxAstSeconds[difficulty])
+            {
+                secBetweenAsteroids -= asteroidSpawnGainSec[difficulty] * Time.deltaTime;
+            }
         }
 
         if (timer <= 0)
@@ -91,6 +104,5 @@ public class AsteroidSpawner : MonoBehaviour
 
         rb.velocity = direction.normalized * UnityEngine.Random.Range(force.x + speedGain, force.y + speedGain);
         //normalizing to make sure the magnitude is 1
-
     }
 }

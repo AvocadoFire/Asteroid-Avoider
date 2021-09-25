@@ -21,12 +21,11 @@ public class GameOverHandler : MonoBehaviour
     }
     public void EndGame()
     {
-        //asteroidSpawner.enabled = false;
         highScore.gameObject.SetActive(false);
         scoreSystem.gameObject.SetActive(false);
         int score = scoreSystem.Score();
-        highScore.CalculateHighScore();
-        int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        var currentHighScore = highScore.CalculateHighScore();
+  //      int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
         gameOverText.text = ("GaME oVeR!\nyour score:  " + score + "\n high score: " + currentHighScore);
         gameOverDisplay.gameObject.SetActive(true);
     }

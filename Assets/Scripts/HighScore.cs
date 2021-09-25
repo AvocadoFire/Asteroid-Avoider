@@ -7,25 +7,34 @@ public class HighScore : MonoBehaviour
 {
     [SerializeField] private Text highScoreText;
     [SerializeField] private ScoreSystem scoreSystem;
+    const string MasterDifficultyKey = "difficulty";
 
-    public const string HighScoreKey = "HighScore";
-
-    int highScore = 0;
+    public static readonly string[] HighScoreName = { "Easy", "Normal", "Hard"};
+    int[] highScores = { 0,0,0 };
+    int difficultyInt;
+    string highScoreName;
+    int highScoreNumber;
 
     private void Start()
     {
-       highScore = PlayerPrefs.GetInt(HighScoreKey, 0);
-       highScoreText.text = $"Your High Score: {highScore}";
+       difficultyInt = PlayerPrefs.GetInt(MasterDifficultyKey);
+
+       highScoreName =  HighScoreName[difficultyInt];
+       highScoreNumber = highScores[difficultyInt];
+
+       highScoreText.text = highScoreName + "   high   score   is   " + PlayerPrefs.GetInt(highScoreName, 0); 
     }
-    public void CalculateHighScore()
+    public int CalculateHighScore()
     {
         var score = scoreSystem.Score();
-        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        int currentHighScore = PlayerPrefs.GetInt(highScoreName, 0);
         if (score > currentHighScore)
         {
             var scoreInt = (int)score;
-            PlayerPrefs.SetInt(HighScoreKey, scoreInt);
+            PlayerPrefs.SetInt(highScoreName, scoreInt);
         }
+        return PlayerPrefs.GetInt(highScoreName, 0);
     }
+
 
 }

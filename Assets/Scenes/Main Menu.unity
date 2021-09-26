@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AsTeroId     aVoiDeR
+  m_text: AsTeroId   DeSTroYeR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5257555b66c36e6449d889b064beb0cd, type: 2}
   m_sharedMaterial: {fileID: -4100702085319975511, guid: 5257555b66c36e6449d889b064beb0cd, type: 2}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 642533701}
   - component: {fileID: 642533700}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Main Menu Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

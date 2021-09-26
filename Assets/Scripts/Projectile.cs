@@ -27,10 +27,11 @@ public class Projectile : MonoBehaviour
     {
         if(otherCollider.gameObject.CompareTag("Asteroid")) 
         {
+            int worth = otherCollider.GetComponent<Asteroid>().Worth();
             Destroy(otherCollider.gameObject);
             Instantiate(asteroidParticle, gameObject.transform.position, gameObject.transform.rotation);
             AudioSource.PlayClipAtPoint(asteroidSound, mainCamera.transform.position, volume);
-            scoreSystem.AddToScore();
+            scoreSystem.AddToScore(worth);
             Destroy(gameObject);
         }
     }

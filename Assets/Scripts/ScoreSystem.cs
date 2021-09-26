@@ -17,9 +17,9 @@ public class ScoreSystem : MonoBehaviour
         scoreText.text = scoreInt.ToString();
     }
 
-    public void AddToScore()
+    public void AddToScore(int worth)
     {
-        score += scoreMultiplier;
+        score += worth * scoreMultiplier; 
     }
 
     public int Score()

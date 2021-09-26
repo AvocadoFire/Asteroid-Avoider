@@ -439,8 +439,8 @@ MonoBehaviour:
   - 0.1
   maxAstSeconds:
   - 0.6
+  - 0.4
   - 0.3
-  - 0.1
   maxAstSpeedGain:
   - 7
   - 12
@@ -7773,7 +7773,7 @@ MonoBehaviour:
   playerShoot: {fileID: 2093094217}
   forceMagnitude: 17
   maxVelocity: 6
-  rotationSpeed: 45
+  rotationSpeed: 180
 --- !u!114 &2093094214
 MonoBehaviour:
   m_ObjectHideFlags: 0

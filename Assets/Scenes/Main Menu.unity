@@ -779,7 +779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &537281716
 Transform:
   m_ObjectHideFlags: 0
@@ -1108,6 +1108,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 450194036}
     m_Modifications:
+    - target: {fileID: 5833181159937010557, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3038391321006430457, guid: d3ccb70d208d8b94793efe43272db77d, type: 3}
     - target: {fileID: 7447903514959078616, guid: b5e258f5fa2d0ae41b038761ef6cc948, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7196,6 +7200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green As
       objectReference: {fileID: 0}
+    - target: {fileID: 7085863513830379056, guid: 242ca27cf64a7bb4091cd806f5fe9680, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6948348489887073465, guid: 5c493581590f1c74baa846066af36541, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 242ca27cf64a7bb4091cd806f5fe9680, type: 3}
 --- !u!1 &2093094211
@@ -7539,6 +7547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 450194036}
     m_Modifications:
+    - target: {fileID: 6874474515591494492, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6948348489887073465, guid: 5c493581590f1c74baa846066af36541, type: 3}
     - target: {fileID: 7170576268183809603, guid: 0f01496e190a77a419fb7edf4b72de02, type: 3}
       propertyPath: m_Name
       value: Shiny
@@ -7664,6 +7676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185c61ad3cc6edf45bc42bd5e1e1045b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worth: 1
 --- !u!54 &8283386882287952283
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -28,7 +28,6 @@ public class GameOverHandler : MonoBehaviour
 
         int score = scoreSystem.Score();
         var currentHighScore = highScore.CalculateHighScore();
-  //      int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
         gameOverText.text = ("GaME oVeR!\nyour score:  " + score + "\n high score: " + currentHighScore);
         gameOverDisplay.gameObject.SetActive(true);
     }
@@ -52,6 +51,7 @@ public class GameOverHandler : MonoBehaviour
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.gameObject.SetActive(true);
         gameOverDisplay.gameObject.SetActive(false);
+        pause.gameObject.SetActive(true);
         scoreSystem.gameObject.SetActive(true);
         highScore.gameObject.SetActive(true);
         asteroidSpawner.enabled = true;

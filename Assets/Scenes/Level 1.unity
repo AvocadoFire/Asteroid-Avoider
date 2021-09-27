@@ -1087,14 +1087,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 32663ea4c62498246b3c9ed4c10a62ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3328,14 +3328,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 32663ea4c62498246b3c9ed4c10a62ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8784,9 +8784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e13a295079846c48b6e88ad1ee433d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 13484228}
-  buttonImageOriginal: {fileID: 21300000, guid: 6c839943b5891074e9a515efcf4b420c, type: 3}
-  buttonImagePaused: {fileID: 21300000, guid: 13c7c3be8e440e445b759f79e26e516d, type: 3}
+  pauseButton: {fileID: 13484228}
   pauseDisplay: {fileID: 607129483}
 --- !u!4 &1914717228
 Transform:

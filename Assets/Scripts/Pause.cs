@@ -5,30 +5,18 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] Button button;
-    [SerializeField] Sprite buttonImageOriginal;
-    [SerializeField] Sprite buttonImagePaused;
+    [SerializeField] Button pauseButton;
     [SerializeField] private GameObject pauseDisplay;
 
-    Image buttonImage;
-    
-    Color buttonColor;
     bool isPaused = false;
-
-    private void Start()
-    {
-       buttonImage = button.GetComponent<Image>();
-    }
-
     public void Paused()
     {
-        Debug.Log("entered paused");
         if (isPaused == false)
         {
             pauseDisplay.SetActive(true);
-            //buttonImage.sprite = buttonImagePaused;
             Time.timeScale = 0;
             isPaused = true;
+            pauseButton.gameObject.SetActive(false);
             return;
         }
         else { return; }
@@ -39,6 +27,6 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         isPaused = false;
         pauseDisplay.SetActive(false);
-        buttonImage.sprite = buttonImageOriginal;
+        pauseButton.gameObject.SetActive(true);
     }
 }

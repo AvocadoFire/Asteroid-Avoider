@@ -34,6 +34,7 @@ public class GameOverHandler : MonoBehaviour
 
     public void PlayAgain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
         gameObject.SetActive(true);
     }
@@ -61,6 +62,7 @@ public class GameOverHandler : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 

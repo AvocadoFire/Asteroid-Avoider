@@ -41,7 +41,9 @@ public class GameOverHandler : MonoBehaviour
     public void ContinueButton()
     {
         asteroidSpawner.enabled = false;
+#if UNITY_ANDROID || UNITY_IOS
         AdManager.Instance.ShowAd(this);
+#endif
         continueButton.interactable = false;
     }
 

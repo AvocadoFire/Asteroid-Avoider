@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdManager : MonoBehaviour, IUnityAdsListener
+public class AdManager : MonoBehaviour
+
+#if UNITY_ANDROID || UNITY_IOS
+, IUnityAdsListener
+#endif
+
 {
+#if UNITY_ANDROID || UNITY_IOS
     [SerializeField] private bool testMode = true;
 
     public static AdManager Instance;
@@ -69,4 +75,5 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     {
         Debug.Log("Unity Ads Ready");
     }
+#endif
 }

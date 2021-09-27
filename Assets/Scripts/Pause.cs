@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] Sprite buttonImageOriginal;
     [SerializeField] Sprite buttonImagePaused;
+    [SerializeField] private GameObject pauseDisplay;
 
     Image buttonImage;
     
@@ -24,13 +25,20 @@ public class Pause : MonoBehaviour
         Debug.Log("entered paused");
         if (isPaused == false)
         {
-        buttonImage.sprite = buttonImagePaused;
+            pauseDisplay.SetActive(true);
+            //buttonImage.sprite = buttonImagePaused;
             Time.timeScale = 0;
-        isPaused = true;
-        return;
+            isPaused = true;
+            return;
         }
+        else { return; }
+    }
+
+    public void Unpause()
+    {
         Time.timeScale = 1;
         isPaused = false;
+        pauseDisplay.SetActive(false);
         buttonImage.sprite = buttonImageOriginal;
     }
 }
